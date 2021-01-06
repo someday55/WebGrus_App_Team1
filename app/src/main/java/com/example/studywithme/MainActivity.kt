@@ -1,5 +1,6 @@
 package com.example.studywithme
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -9,11 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        btn_getText.setOnClickListener{
-            var resultText = et_id.text.toString()
-            tv_result.setText(resultText)
-
+        btn_a.setOnClickListener{
+            val intent = Intent(this, SubActivity::class.java)
+            intent.putExtra("msg", tv_sendMsg.toString())
+            startActivity(intent)
 
         }
 
